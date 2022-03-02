@@ -40,7 +40,7 @@ public class cash implements template {
      *@return void
      */
     @Override
-    public void receive(double amount) { ; }
+    public void receive(double amount) { this.balance += amount; }
     
     /**
      * Gives the current value of the instances balance
