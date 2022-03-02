@@ -5,10 +5,17 @@ package facade;
 
 public class wallet {
 
+    // all of the payment methods that the wallet can use
     private credit myCreditCard;
     private debit myDebitCard;
     private cash myCash;
 
+    /**
+     * This function will set the initial amount on the objects in the wallet
+     *
+     *@param amount a double containing the amount to be deposited
+     *@return void
+     */
     public wallet(double credit, double debit, double cash) {
 
         this.myCreditCard = new credit(credit);
@@ -19,6 +26,13 @@ public class wallet {
         System.out.println("Wallet created!\n");
     }
 
+    /**
+     * This function will handle all of the necessary steps to attempt to 
+     * transfer the money out of the payment methods selected
+     *
+     *@param amount a double containing the amount to be transferred
+     *@return void
+     */
     public void pay(double amount, int method) {
         switch(method) {
             case 0:
@@ -35,6 +49,13 @@ public class wallet {
         }
     }
 
+    /**
+     * This function will handle all of the necessary steps to attempt to 
+     * transfer the money in to the payment method selected
+     *
+     *@param amount a double containing the amount to be transferred
+     *@return void
+     */
     public void receive(double amount, int method) {
         switch(method) {
             case 0:
@@ -50,7 +71,12 @@ public class wallet {
                 throw new ArithmeticException("method must me in range [0-2]");
         }
     }
-
+    
+    /**
+     * Gives the current values of the instances in the wallet
+     *
+     *@return void
+     */
     void checkBalance() {
         System.out.println("credit: " + this.myCreditCard.getBalance()
                         + "\ndebit: " + this.myDebitCard.getBalance()

@@ -5,18 +5,23 @@ package facade;
 
 public class App {
     public static void main(String[] args) {
+        // creates the wallet to show off the facade
         wallet myWallet = new wallet(-100, 1000, 42);
 
+        // shows the pay function of the wallet
         myWallet.pay(435, 0);
         myWallet.pay(111, 1);
         myWallet.pay(222, 2);
 
+        // outputs the new balance of the contents of the wallet
         myWallet.checkBalance();        
         
+        // show the receive function for all items in the wallet
         myWallet.receive(435, 0);
         myWallet.receive(111, 1);
         myWallet.receive(222, 2);
 
+        // shows the balance once again
         myWallet.checkBalance();        
     }
 }
