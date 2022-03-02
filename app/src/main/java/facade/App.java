@@ -5,7 +5,19 @@ package facade;
 
 public class App {
     public static void main(String[] args) {
-        wallet myWallet = new wallet(1000, -100, 42);
+        wallet myWallet = new wallet(-100, 1000, 42);
+
+        myWallet.pay(435, 0);
+        myWallet.pay(111, 1);
+        myWallet.pay(222, 2);
+
+        myWallet.checkBalance();        
+        
+        myWallet.receive(435, 0);
+        myWallet.receive(111, 1);
+        myWallet.receive(222, 2);
+
+        myWallet.checkBalance();        
     }
 }
 

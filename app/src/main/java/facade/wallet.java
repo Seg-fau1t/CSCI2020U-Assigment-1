@@ -6,8 +6,8 @@ package facade;
 public class wallet {
 
     private credit myCreditCard;
-    private debit myDebitCard = new debit(0);
-    private cash myCash = new cash(0);
+    private debit myDebitCard;
+    private cash myCash;
 
     public wallet(double credit, double debit, double cash) {
 
@@ -16,13 +16,46 @@ public class wallet {
         this.myCash = new cash(cash);
 
         this.checkBalance();
-        System.out.println("Wallet created");
+        System.out.println("Wallet created!\n");
+    }
+
+    public void pay(double amount, int method) {
+        switch(method) {
+            case 0:
+                this.myCreditCard.pay(amount);
+                break;
+            case 1:
+                this.myDebitCard.pay(amount);
+                break;
+            case 2:
+                this.myCash.pay(amount);
+                break;
+            default:
+                throw new ArithmeticException("method must me in range [0-2]");
+        }
+    }
+
+    public void receive(double amount, int method) {
+        switch(method) {
+            case 0:
+                this.myCreditCard.receive(amount);
+                break;
+            case 1:
+                this.myDebitCard.receive(amount);
+                break;
+            case 2:
+                this.myCash.receive(amount);
+                break;
+            default:
+                throw new ArithmeticException("method must me in range [0-2]");
+        }
     }
 
     void checkBalance() {
         System.out.println("credit: " + this.myCreditCard.getBalance()
                         + "\ndebit: " + this.myDebitCard.getBalance()
-                        + "\ncash: " + this.myCash.getBalance());
+                        + "\ncash: " + this.myCash.getBalance()
+                        + "\n");
     }
 }
 
