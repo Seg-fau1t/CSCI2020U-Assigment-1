@@ -6,23 +6,23 @@ package facade;
 public class wallet {
 
     private credit myCreditCard;
-    //private debit myDebitCard = new debit(0);
-    //private cash myCash = new cash(0);
+    private debit myDebitCard = new debit(0);
+    private cash myCash = new cash(0);
 
     public wallet(double credit, double debit, double cash) {
 
         this.myCreditCard = new credit(credit);
-        //this.myDebitCard = new debit(debit);
-        //this.myCash = new cash(cash);
+        this.myDebitCard = new debit(debit);
+        this.myCash = new cash(cash);
 
-        System.out.println("credit: " + this.myCreditCard.getBalance()
-                        + "\ndebit: " + debit 
-                        + "\ncash: " + cash 
-                        + "\nHope that's enough for the day.");
+        this.checkBalance();
+        System.out.println("Wallet created");
     }
 
     void checkBalance() {
-        System.out.println("TESTING... TESTING...");
+        System.out.println("credit: " + this.myCreditCard.getBalance()
+                        + "\ndebit: " + this.myDebitCard.getBalance()
+                        + "\ncash: " + this.myCash.getBalance());
     }
 }
 
