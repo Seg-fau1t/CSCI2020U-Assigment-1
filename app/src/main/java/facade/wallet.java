@@ -5,19 +5,20 @@ package facade;
 
 public class wallet {
 
-    //private credit creditCard = new credit(0);
-    //private debit debitCard = new debit(0);
+    private credit myCreditCard;
+    //private debit myDebitCard = new debit(0);
     //private cash myCash = new cash(0);
 
     public wallet(double credit, double debit, double cash) {
-        System.out.println("credit: " + credit 
+
+        this.myCreditCard = new credit(credit);
+        //this.myDebitCard = new debit(debit);
+        //this.myCash = new cash(cash);
+
+        System.out.println("credit: " + this.myCreditCard.getBalance()
                         + "\ndebit: " + debit 
                         + "\ncash: " + cash 
-                        + "\nHope that's enough.");
-
-        //this.creditCard.receive(credit);
-        //this.debitCard.receive(debit);
-        //this.myCash.receive(cash);
+                        + "\nHope that's enough for the day.");
     }
 
     void checkBalance() {
