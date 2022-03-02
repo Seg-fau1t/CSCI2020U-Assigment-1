@@ -4,7 +4,23 @@
 package facade;
 
 public class wallet {
-    public wallet() {
+
+    //private credit creditCard = new credit(0);
+    //private debit debitCard = new debit(0);
+    //private cash myCash = new cash(0);
+
+    public wallet(double credit, double debit, double cash) {
+        System.out.println("credit: " + credit 
+                        + "\ndebit: " + debit 
+                        + "\ncash: " + cash 
+                        + "\nHope that's enough.");
+
+        //this.creditCard.receive(credit);
+        //this.debitCard.receive(debit);
+        //this.myCash.receive(cash);
+    }
+
+    void checkBalance() {
         System.out.println("TESTING... TESTING...");
     }
 }

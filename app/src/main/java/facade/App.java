@@ -5,7 +5,7 @@ package facade;
 
 public class App {
     public static void main(String[] args) {
-        wallet myWallet = new wallet();
+        wallet myWallet = new wallet(1000, -100, 42);
     }
 }
 
